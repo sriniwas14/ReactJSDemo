@@ -3,3 +3,24 @@
     margin-top: 45vh;
     text-align: center;
 }
+
+.userCard {
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.userCard:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in;
+}
+
+.userCard .userCardTitle {
+    margin-top: 10px;
+    margin-bottom: 0;
+    cursor: inherit;
+}
+
+.userCard .userCardDetails {
+    margin: 10px 0;
+    cursor: inherit;
+}

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { setUsers } from './actions/userAction'
 import Loader from './elements/Loader'
@@ -20,7 +20,7 @@ function Users(props) {
     }
 
     return (
-        <div class="userViewContainer">
+        <div className="userViewContainer">
         {
             props.users.length>0 ? (
                 <div>
