@@ -21,6 +21,7 @@ const compStyle = {
 
 function Users(props) {
     const [sortKey, setSortKey] = useState({ index: "id", value: "None" })
+    const [keyPrefix, setKeyPrefix] = useState(1)
 
     useEffect(() => {
         fetchUsers()
@@ -34,6 +35,8 @@ function Users(props) {
             sorted = [...props.users].sort((a, b) => a[sortKey.index]-b[sortKey.index]);
 
         props.setUsers(sorted)
+
+        setKeyPrefix(keyPrefix+1)
     }, [sortKey])
 
     function fetchUsers() {
@@ -58,13 +61,13 @@ function Users(props) {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item eventKey="1" onClick={(e) => setSortKey({index: 'id', value: e.target.innerText })}>None</Dropdown.Item>
-                                <Dropdown.Item eventKey="2" onClick={(e) => { console.log(e); setSortKey({index: 'first_name', value: e.target.innerText })} }>First Name</Dropdown.Item>
-                                <Dropdown.Item eventKey="3" onClick={(e) => setSortKey({index: 'last_name', value: e.target.innerText })} >Last Name</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setSortKey({index: 'id', value: e.target.innerText })}>None</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => { console.log(e); setSortKey({index: 'first_name', value: e.target.innerText })} }>First Name</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => setSortKey({index: 'last_name', value: e.target.innerText })} >Last Name</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <UserList users={props.users} />
+                    <UserList keyPrefix={keyPrefix} users={props.users} />
                 </div>
             ) : (<Loader />)
         }

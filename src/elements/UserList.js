@@ -10,7 +10,7 @@ export default function UserList(props) {
         <animated.div style={animProps}>
             <Row>
             {
-                props.users.map(user => (<UserCard key={user.id} user={user} />))
+                props.users.map(user => (<UserCard key={props.keyPrefix+"_"+user.id} user={user} />))
             }
             </Row>
         </animated.div>
