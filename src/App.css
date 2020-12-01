@@ -10,7 +10,7 @@
 }
 
 .userCard:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     transition: 0.2s ease-in;
 }
 
@@ -23,4 +23,9 @@
 .userCard .userCardDetails {
     margin: 10px 0;
     cursor: inherit;
+}
+
+.userCardLink, .userCardLink:hover {
+    color: unset;
+    text-decoration: none !important;
 }
