@@ -10,8 +10,8 @@ export default function UserCard(props) {
     return (
         <Col md={4}>
             <Link className="userCardLink" to={`/users/${props.user.id}`}>
-                <Card className="userCard" style={{ margin: 10, padding: 10 }}>
-                    <Image src={props.user.avatar} rounded/>
+                <Card className="userCard" style={{ margin: 10, padding: 10, display: "block" }}>
+                    <Image src={props.user.avatar} width="100%" rounded/>
                     <Card.Title className="userCardTitle">{ getFullName(props.user) }</Card.Title>
                     <Card.Text className="userCardDetails">{ props.user.email }</Card.Text>
                 </Card>
